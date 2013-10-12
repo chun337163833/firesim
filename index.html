@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Firesim</title>
+        <script src='http://cdn.html5quintus.com/v0.1.5/quintus-all.js'></script>
+    </head>
+    <body>
+        <script>
+        // Quintus stuff
+        var Q = quintus({ development: true }) // Create an engine instance
+            .include("Sprites, Scenes, Input, 2D, Touch, UI") // Load modules
+            .setup() // Add canvas element onto page
+            .controls() // Add in default controls (keyboard, buttons)
+            .touch() // Add in touch support (for the UI)
+        
+        </script>
+    </body>
+</html>
