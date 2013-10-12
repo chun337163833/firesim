@@ -1,4 +1,3 @@
-firesim
+Firesim
 =======
-
-HTML5 wildfire simulation written purely in HTML5, CSS3, and Javascript
+A wildfire simulator written purely in HTML5 using the Quintus framework.
