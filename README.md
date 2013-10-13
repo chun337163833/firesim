@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #LimeJS
 
 ##Getting started:
@@ -144,3 +145,9 @@ Closure video from Google I/O 2010:
 
 
 
+=======
+firesim
+=======
+
+HTML5 wildfire simulation
+>>>>>>> d8836fb77125d868c33d508bf08f8b2d3af615f5
