@@ -21,6 +21,10 @@ firesim.start = function(){
         landLayer_h: 64*6,
         controlsLayer_w: 64*5,
         controlsLayer_h: 64*1.5,
+        
+        // bottom menu
+        menu_margin_x: 50,
+        menu_margin_y: 20
     }
 
     var director = new lime.Director(document.body,gameObj.width,gameObj.height);     
@@ -33,6 +37,7 @@ firesim.start = function(){
 
     gameScene.appendChild(landLayer);
     gameScene.appendChild(controlsLayer);
+    
 
     director.replaceScene(gameScene); 
 }
