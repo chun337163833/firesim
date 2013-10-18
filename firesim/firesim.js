@@ -12,19 +12,19 @@ firesim.start = function(){
 
     //game object
     var gameObj = {
-        width: 320,
-        height: 480,
-        tile_size: 64,
+        width: 720,
+        height: 1280,
+        tile_size: 256,
         num_tiles_x: 5,
         num_tiles_y: 6,
-        landLayer_w: 64*5,
-        landLayer_h: 64*6,
-        controlsLayer_w: 64*5,
-        controlsLayer_h: 64*1.5,
+        landLayer_w: 256*20,
+        landLayer_h: 256*24,
+        controlsLayer_w: 256*5,
+        controlsLayer_h: 256*1.5,
         
         // bottom menu
-        menu_margin_x: 50,
-        menu_margin_y: 20
+        menu_margin_x: 200,
+        menu_margin_y: 80
     }
     
     // player object
@@ -51,8 +51,8 @@ controlsLayer.appendChild(controlArea);
     
     // menu button
     var menuButton = new lime.GlossyButton().setColor('#133242').setText('Menu')
-    .setPosition(60, gameObj.height-gameObj.controlsLayer_h/2)
-    .setSize(80, 40);
+    .setPosition(240, gameObj.height-gameObj.controlsLayer_h/2)
+    .setSize(200, 80);
 controlsLayer.appendChild(menuButton); 
     
 
