@@ -26,6 +26,10 @@ firesim.start = function(){
         menu_margin_x: 50,
         menu_margin_y: 20
     }
+    
+    // player object
+    var playerObj = {   
+    }
 
     var director = new lime.Director(document.body,gameObj.width,gameObj.height);     
     director.makeMobileWebAppCapable();
@@ -37,6 +41,19 @@ firesim.start = function(){
 
     gameScene.appendChild(landLayer);
     gameScene.appendChild(controlsLayer);
+    
+    // controls
+    var controlArea = new lime.Sprite().setAnchorPoint(0,0)
+    .setPosition(0, gameObj.height-gameObj.controlsLayer_h)
+    .setSize(gameObj.controlsLayer_w, gameObj.controlsLayer_h)
+    .setFill('#0D0D0D')
+controlsLayer.appendChild(controlArea);
+    
+    // menu button
+    var menuButton = new lime.GlossyButton().setColor('#133242').setText('Menu')
+    .setPosition(60, gameObj.height-gameObj.controlsLayer_h/2)
+    .setSize(80, 40);
+controlsLayer.appendChild(menuButton); 
     
 
     director.replaceScene(gameScene); 
