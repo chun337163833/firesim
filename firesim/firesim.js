@@ -6,25 +6,26 @@ goog.require('lime.Director');
 goog.require('lime.Scene');
 goog.require('lime.Layer');
 goog.require('lime.GlossyButton');
+goog.require('firesim.Land');
 
 // entrypoint 
 firesim.start = function(){     
 
     //game object
     var gameObj = {
-        width: 720,
-        height: 1280,
-        tile_size: 256,
+        width: 320,
+        height: 480,
+        tile_size: 64,
         num_tiles_x: 5,
         num_tiles_y: 6,
-        landLayer_w: 256*20,
-        landLayer_h: 256*24,
-        controlsLayer_w: 256*5,
-        controlsLayer_h: 256*1.5,
+        landLayer_w: 64*5,
+        landLayer_h: 64*6,
+        controlsLayer_w: 64*5,
+        controlsLayer_h: 64*1.5,
         
         // bottom menu
-        menu_margin_x: 200,
-        menu_margin_y: 80
+        menu_margin_x: 50,
+        menu_margin_y: 20
     }
     
     // player object
@@ -51,10 +52,17 @@ controlsLayer.appendChild(controlArea);
     
     // menu button
     var menuButton = new lime.GlossyButton().setColor('#133242').setText('Menu')
-    .setPosition(240, gameObj.height-gameObj.controlsLayer_h/2)
-    .setSize(200, 80);
-controlsLayer.appendChild(menuButton); 
+    .setPosition(60, gameObj.height-gameObj.controlsLayer_h/2)
+    .setSize(80, 40);
+controlsLayer.appendChild(menuButton);
     
+    //create land elements
+    for(var i=0; i<gameObj.num_tiles_x; i++) {
+        for(var j=0; j<gameObj.num_tiles_y; j++) {
+            var landElement = new firesim.Land(gameObj, playerObj).setPosition(i*gameObj.tile_size, j*gameObj.tile_size);
+            landLayer.appendChild(landElement);
+        }
+    }
 
     director.replaceScene(gameScene); 
 }
