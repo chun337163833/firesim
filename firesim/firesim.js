@@ -28,7 +28,6 @@ firesim.start = function(){
         menu_margin_x: 50,
         menu_margin_y: 20
         
-        
     }
     
     // player object
