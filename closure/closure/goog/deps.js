@@ -107,8 +107,9 @@ goog.addDependency('../../../box2d/src/retained/text.js', ['pl.retained.Text'], 
 goog.addDependency('../../../box2d/src/retained/tileLayer.js', ['pl.retained.TileLayer'], ['goog.math.Vec2', 'pl.ex', 'pl.gfx']);
 goog.addDependency('../../../box2d/src/soundEffect.js', ['pl.SoundEffect'], []);
 goog.addDependency('../../../box2d/src/stats.js', ['pl.Stats'], ['goog.dom']);
-goog.addDependency('../../../firesim/firesim.js', ['firesim'], ['firesim.Land', 'lime.Director', 'lime.GlossyButton', 'lime.Layer', 'lime.Scene']);
-goog.addDependency('../../../firesim/land.js', ['firesim.Land'], ['lime.Sprite']);
+goog.addDependency('../../../firesim/firesim.js', ['firesim'], ['firesim.Space', 'firesim.Tree', 'lime.Director', 'lime.GlossyButton', 'lime.Layer', 'lime.Scene']);
+goog.addDependency('../../../firesim/space.js', ['firesim.Space'], ['lime.Sprite']);
+goog.addDependency('../../../firesim/tree.js', ['firesim.Tree'], ['lime.Sprite']);
 goog.addDependency('../../../lime/css/lime.css.soy.js', ['lime.css'], ['soy', 'soydata']);
 goog.addDependency('../../../lime/demos/pong/game.js', ['pong.Game'], ['lime.Circle', 'lime.Label', 'lime.RoundedRect', 'lime.Sprite', 'lime.animation.FadeTo', 'lime.audio.Audio', 'lime.fill.LinearGradient', 'pong.Notice', 'pong.Player']);
 goog.addDependency('../../../lime/demos/pong/notice.js', ['pong.Notice'], ['lime.RoundedRect']);
