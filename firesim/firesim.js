@@ -6,11 +6,10 @@ goog.require('lime.Director');
 goog.require('lime.Scene');
 goog.require('lime.Layer');
 goog.require('lime.GlossyButton');
-goog.require('firesim.Space');
-goog.require('firesim.Tree');
+goog.require('firesim.Land');
 
 // entrypoint 
-firesim.start = function(){     
+firesim.start = function(){
 
     //game object
     var gameObj = {
@@ -27,7 +26,6 @@ firesim.start = function(){
         // bottom menu
         menu_margin_x: 50,
         menu_margin_y: 20
-        
     }
     
     // player object
@@ -61,11 +59,7 @@ controlsLayer.appendChild(menuButton);
     //create land elements
     for(var i=0; i<gameObj.num_tiles_x; i++) {
         for(var j=0; j<gameObj.num_tiles_y; j++) {
-            var landElement = new firesim.Space(gameObj, playerObj).setPosition(i*gameObj.tile_size, j*gameObj.tile_size);
+            var landElement = new firesim.Land(gameObj, playerObj).setPosition(i*gameObj.tile_size, j*gameObj.tile_size);
             landLayer.appendChild(landElement);
         }
     }
-    var landElement = new firesim.Tree(gameObj, playerObj).setPosition(20*gameObj.tile_size, 20*gameObj.tile_size);
-            landLayer.appendChild(landElement);
-    director.replaceScene(gameScene); 
-}
