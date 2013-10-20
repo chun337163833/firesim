@@ -63,3 +63,4 @@ controlsLayer.appendChild(menuButton);
             landLayer.appendChild(landElement);
         }
     }
+}
