@@ -63,4 +63,5 @@ controlsLayer.appendChild(menuButton);
             landLayer.appendChild(landElement);
         }
     }
+    director.replaceScene(gameScene); 
 }
