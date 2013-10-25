@@ -31,6 +31,9 @@ firesim.start = function(){
     // player object
     var playerObj = {   
     }
+    
+    // map array
+    gameObj.mapObj = new Array(gameObj.num_tiles_y)
 
     var director = new lime.Director(document.body,gameObj.width,gameObj.height);     
     director.makeMobileWebAppCapable();
@@ -57,11 +60,23 @@ controlsLayer.appendChild(controlArea);*/
 controlsLayer.appendChild(menuButton);
     
     //create land elements
+    for(var j=0; j<gameObj.num_tiles_y; j++) {
+        gameObj.mapObj[j] = new Array(gameObj.num_tiles_x)
+        for(var i=0; i<gameObj.num_tiles_x; i++) {
+            gameObj.mapObj[j][i] = 1;
+        }
+    }
+    // start some fiyuhz!
+    gameObj.mapObj[10][10] = 2;
+    
+    // create land elements
     for(var i=0; i<gameObj.num_tiles_x; i++) {
         for(var j=0; j<gameObj.num_tiles_y; j++) {
-            var landElement = new firesim.Land(gameObj, playerObj).setPosition(i*gameObj.tile_size, j*gameObj.tile_size);
+            var landElement = new firesim.Land(gameObj,playerObj,i,j).setPosition(i*gameObj.tile_size, j*gameObj.tile_size);
             landLayer.appendChild(landElement);
         }
     }
+    
+    // render da scene
     director.replaceScene(gameScene); 
 }
