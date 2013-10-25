@@ -12,6 +12,11 @@ firesim.Land = function(gameObj, playerObj) {
     this.setSize(gameObj.tile_size,gameObj.tile_size);
     this.setFill('images/space.png');
     this.state = this.EMPTY;
+    
+    lime.scheduleManager.scheduleWithDelay(function(dt){
+    // this.a=dt;
+    
+    },this);
 }
 
 goog.inherits(firesim.Land,lime.Sprite);
@@ -20,4 +25,4 @@ goog.inherits(firesim.Land,lime.Sprite);
 firesim.Land.prototype.EMPTY = 0;
 firesim.Land.prototype.FOREST = 1;
 firesim.Land.prototype.FIRE = 2;
-firesim.Land.prototype.BURNT = 3;
+firesim.Land.prototype.BURNT = 3
