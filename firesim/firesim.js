@@ -23,9 +23,6 @@ firesim.start = function(){
         controlsLayer_w: 32*5,
         controlsLayer_h: 32*1.5,
         
-        // bottom menu
-        menu_margin_x: 50,
-        menu_margin_y: 20
     }
     
     // player object
@@ -58,6 +55,17 @@ controlsLayer.appendChild(controlArea);*/
     .setPosition(60, 680)
     .setSize(80, 40);
 controlsLayer.appendChild(menuButton);
+    
+    // pause button
+    var pauseButton = new lime.GlossyButton().setColor('#133242').setText('Pause')
+    .setPosition(160, 680)
+    .setSize(80, 40);
+controlsLayer.appendChild(pauseButton);
+    
+    // pause button event
+goog.events.listen(pauseButton,['mousedown', 'touchstart'], function(e) {
+    director.setPaused(true);
+});
     
     //create land elements
     for(var j=0; j<gameObj.num_tiles_y; j++) {

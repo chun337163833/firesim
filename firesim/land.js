@@ -35,8 +35,7 @@ firesim.Land = function(gameObj, playerObj, i, j) {
         // look at other squares
         if ((this.counter < 500) && (this.counter > 0)) {
             // dont check edge tiles
-            if ((j>0) && (j<gameObj.numb_tiles_y-1) && (i>0) && (i<gameObj.numb_tiles_x-1)) {
-                console.log("inside");
+            if ((j>0) && (j<gameObj.num_tiles_y-1) && (i>0) && (i<gameObj.num_tiles_x-1)) {
                 if (((gameObj.mapObj[j][i+1] == 2) || (gameObj.mapObj[j][i-1] == 2) || (gameObj.mapObj[j+1][i] == 2) || (gameObj.mapObj[j-1][i] == 2)) && (gameObj.mapObj[j][i] == 1)) {
                     this.nextstate = 2;
                 }
