@@ -7,7 +7,7 @@ goog.require('lime.Scene');
 goog.require('lime.Layer');
 goog.require('lime.GlossyButton');
 goog.require('firesim.Land');
-// goog.require('firesim.helper.pauseScene')
+// goog.require('firesim.pauseScene')
 
 // entrypoint 
 firesim.start = function(){

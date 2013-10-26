@@ -1,4 +1,4 @@
-goog.provide('firesim.helper.PauseScene')
+goog.provide('firesim.PauseScene')
 
 firesim.helper.PauseScene = function() {
 lime.Scene.call(this);
@@ -13,4 +13,4 @@ lime.Scene.call(this);
 controlsLayer.appendChild(menuButton);
 }
 
-goog.inherits(firesim.helper.PauseScene, lime.Scene);
+goog.inherits(firesim.PauseScene, lime.Scene);

@@ -45,7 +45,7 @@ firesim.Land = function(gameObj, playerObj, i, j) {
     
         // update squares
         if (this.counter < 0) {
-            if (this.nextstate == 2) {
+            if (this.nextstate == 2 && ((Math.floor((Math.random()*10)+1) < 5))) {
                 // fire spread
                 gameObj.mapObj[j][i] = 2;
                 this.setFill('images/fire.png')
