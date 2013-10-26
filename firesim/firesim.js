@@ -14,16 +14,15 @@ firesim.start = function(){
 
     //game object
     var gameObj = {
-        width: 1280,
-        height: 720,
-        tile_size: 16,
-        num_tiles_x: 80,
-        num_tiles_y: 45,
-        landLayer_w: 16*80,
-        landLayer_h: 16*50,
-        controlsLayer_w: 32*5,
-        controlsLayer_h: 32*1.5,
-        
+		width: 1280,
+		height: 720,
+		tile_size: 16,
+		num_tiles_x: 80,
+		num_tiles_y: 45,
+		landLayer_w: 16*80,
+		landLayer_h: 16*50,
+		controlsLayer_w: 32*5,
+		controlsLayer_h: 32*1.5
     }
     
     // player object
@@ -78,6 +77,13 @@ goog.events.listen(pauseButton,['mousedown', 'touchstart'], function(e) {
     }
     // start some fiyuhz!
     gameObj.mapObj[10][10] = 2;
+	
+	// add some empty space
+	gameObj.mapObj[10][12] = 0;
+	gameObj.mapObj[11][12] = 0;
+	gameObj.mapObj[11][13] = 0;
+	gameObj.mapObj[12][13] = 0;
+	gameObj.mapObj[12][14] = 0;
     
     // create land elements
     for(var i=0; i<gameObj.num_tiles_x; i++) {

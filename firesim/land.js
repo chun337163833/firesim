@@ -41,6 +41,7 @@ firesim.Land = function(gameObj, playerObj, i, j) {
                 }
                 
             }
+			
         }
     
         // update squares
