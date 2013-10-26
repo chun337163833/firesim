@@ -7,6 +7,7 @@ goog.require('lime.Scene');
 goog.require('lime.Layer');
 goog.require('lime.GlossyButton');
 goog.require('firesim.Land');
+// goog.require('firesim.helper.pauseScene')
 
 // entrypoint 
 firesim.start = function(){
@@ -31,12 +32,13 @@ firesim.start = function(){
     
     // map array
     gameObj.mapObj = new Array(gameObj.num_tiles_y)
-
+    
+    // directors, scenes, and stuff
     var director = new lime.Director(document.body,gameObj.width,gameObj.height);     
     director.makeMobileWebAppCapable();
     director.setDisplayFPS(true); // set fps to show in corner
 
-    var gameScene = new lime.Scene().setRenderer(lime.Renderer.CANVAS); // render canvas
+    var gameScene = new lime.Scene().setRenderer(lime.Renderer.CANVAS); // set renderer
     var landLayer = new lime.Layer().setAnchorPoint(0, 0);
     var controlsLayer = new lime.Layer().setAnchorPoint(0, 0);
 
