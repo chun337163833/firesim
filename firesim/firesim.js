@@ -77,6 +77,7 @@ goog.events.listen(pauseButton,['mousedown', 'touchstart'], function(e) {
     }
     // start some fiyuhz!
     gameObj.mapObj[10][10] = 2;
+	gameObj.mapObj[10][10].fireCounter = 3000; // note to self
 	
 	// add some empty space
 	gameObj.mapObj[10][12] = 0;
