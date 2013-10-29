@@ -13,8 +13,9 @@ firesim.Land = function(gameObj, playerObj, i, j) {
     this.setSize(gameObj.tile_size, gameObj.tile_size);
     this.setFill('images/space.png');
     
-    this.counter = 2000; // game loop timer
+    this.counter = 1000; // game loop timer
     
+	
     // fill tiles based on state
     if (gameObj.mapObj[j][i] == 0) {
         this.setFill('images/space.png'); // space squares
@@ -27,6 +28,12 @@ firesim.Land = function(gameObj, playerObj, i, j) {
     if (gameObj.mapObj[j][i] == 2) {
         this.setFill('images/fire.png'); // fire squares
     }
+	
+	goog.events.listen(this,['mousedown','touchstart'],function(e) {
+		e.event.stopPropagation();
+		gameObj.mapObj[j][i] = 2;
+		this.setFill('images/fire.png');
+	});
     
     // schedule + event management
     lime.scheduleManager.schedule(function(dt){
