@@ -7,6 +7,12 @@ goog.require('lime.Sprite');
  * @param {} gameObj
 */
 firesim.Land = function(gameObj, playerObj, i, j) {
+	
+	fireTick2 = function(tick) {
+		// set it to tickTime*3 +/- 10%
+		y = Math.floor(tick*3*(1+(Math.random()*0.2-0.1)));
+		return(y);
+	}
     // set up stuff to render
     goog.base(this);
     this.setAnchorPoint(0, 0);
@@ -31,7 +37,7 @@ firesim.Land = function(gameObj, playerObj, i, j) {
     
     if (gameObj.mapObj[j][i] == 2) {
         this.setFill('images/fire.png'); // fire squares
-		this.fireCounter = fireTick;
+		this.fireCounter = fireTick2(tickTime);
     }
 	
 	if (gameObj.mapObj[j][i] == 3) {
@@ -77,7 +83,7 @@ firesim.Land = function(gameObj, playerObj, i, j) {
 					// fire spread
 					gameObj.mapObj[j][i] = 2;
 					this.setFill('images/fire.png')
-					this.fireCounter = fireTick;
+					this.fireCounter = fireTick2(tickTime);
 					console.log(fireTick)
 				}
             }
