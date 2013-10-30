@@ -15,7 +15,7 @@ firesim.Land = function(gameObj, playerObj, i, j) {
 	
 	// variables
 	tickTime = 1000;
-	fireTick = tickTime*3;
+	fireTick = Math.floor(tickTime*3*(1+(Math.random()*0.2-0.1))); // set it to tickTime*3 +/- 10%
     
     this.counter = tickTime; // game loop timer
     
@@ -42,6 +42,7 @@ firesim.Land = function(gameObj, playerObj, i, j) {
 		e.event.stopPropagation();
 		gameObj.mapObj[j][i] = 2;
 		this.setFill('images/fire.png');
+		this.fireCounter = fireTick;
 	});
     
     // schedule + event management
@@ -77,6 +78,7 @@ firesim.Land = function(gameObj, playerObj, i, j) {
 					gameObj.mapObj[j][i] = 2;
 					this.setFill('images/fire.png')
 					this.fireCounter = fireTick;
+					console.log(fireTick)
 				}
             }
             this.counter = tickTime;
