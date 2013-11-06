@@ -84,7 +84,6 @@ firesim.Land = function(gameObj, playerObj, i, j) {
 					gameObj.mapObj[j][i] = 2;
 					this.setFill('images/fire.png')
 					this.fireCounter = fireTick2(tickTime);
-					console.log(fireTick)
 				}
             }
             this.counter = tickTime;
