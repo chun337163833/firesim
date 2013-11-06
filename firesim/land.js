@@ -67,26 +67,51 @@ firesim.Land = function(gameObj, playerObj, i, j) {
         // look at other squares
         if ((this.counter < tickTime/2) && (this.counter > 0)) {
             // dont check edge tiles
-            if ((j>0) && (j<gameObj.num_tiles_y-1) && (i>0) && (i<gameObj.num_tiles_x-1)) {
-                if (((gameObj.mapObj[j][i+1] == 2) || (gameObj.mapObj[j][i-1] == 2) || (gameObj.mapObj[j+1][i] == 2) || (gameObj.mapObj[j-1][i] == 2)) && (gameObj.mapObj[j][i] == 1)) {
-                    this.nextstate = 2;
-                }
-                
-            }
+			if ((gameObj.mapObj[j][i] == 2) && (this.fireCheck == 0)) {
+				if ((j>0) && (j<gameObj.num_tiles_y-1) && (i>0) && (i<gameObj.num_tiles_x-1)) {
+					if (gameObj.mapObj[j-1][i] == 1) {
+						if (Math.floor((Math.random()*10+1) < 5)) {
+							gameObj.mapObj[j-1][i] = -1;
+						} // random chance
+					} // check up square
+				
+					if (gameObj.mapObj[j+1][i] == 1) {
+						if (Math.floor((Math.random()*10+1) < 5)) {
+							gameObj.mapObj[j+1][i] = -1;
+						} // random chance
+					} // check down square
+					
+					if (gameObj.mapObj[j][i+1] == 1) {
+							if (Math.floor((Math.random()*10+1) < 5)) {
+								gameObj.mapObj[j][i+1] = -1;
+							} // random chance
+					} // check right square
+					
+					if (gameObj.mapObj[j][i-1] == 1) {
+							if (Math.floor((Math.random()*10+1) < 5)) {
+								gameObj.mapObj[j][i-1] = -1;
+							} // random chance
+					} // check left square
+					
+					
+				} // edge square if
+				this.fireCheck = 1;
+			} // fire check if
+        } // fire tick if
+    	
+		if (this.counter > tickTime/2) {
+			if (gameObj.mapObj[j][i] == -1) {
+				// fire set
+				gameObj.mapObj[j][i] = 2;
+				this.setFill('images/fire.png')
+				this.fireCounter = fireTick2(tickTime);
+			}
+		}
 			
-        }
-    
         // update squares
         if (this.counter < 0) {
-            if (this.nextstate == 2 && ((Math.floor((Math.random()*10)+1) < 5))) {
-				if (gameObj.mapObj[j][i] == 1) {
-					// fire spread
-					gameObj.mapObj[j][i] = 2;
-					this.setFill('images/fire.png')
-					this.fireCounter = fireTick2(tickTime);
-				}
-            }
             this.counter = tickTime;
+			this.fireCheck = 0
         }
     },this);
 
