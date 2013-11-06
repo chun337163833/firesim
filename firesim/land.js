@@ -57,8 +57,8 @@ firesim.Land = function(gameObj, playerObj, i, j) {
         
 		// set burnt if burned for amount of time
 		if (gameObj.mapObj[j][i] == 2) {
-			this.fireCounter -= dt;
-			if (this.fireCounter < 0) {
+				this.fireCounter -= dt;
+				if (this.fireCounter < 0) {
 				gameObj.mapObj[j][i] = 3;
 				this.setFill('images/burnt.png');
 			}
@@ -66,8 +66,10 @@ firesim.Land = function(gameObj, playerObj, i, j) {
 		
         // look at other squares
         if ((this.counter < tickTime/2) && (this.counter > 0)) {
-            // dont check edge tiles
+            // edge tile management
 			if ((gameObj.mapObj[j][i] == 2) && (this.fireCheck == 0)) {
+				
+				
 				if ((j>0) && (j<gameObj.num_tiles_y-1) && (i>0) && (i<gameObj.num_tiles_x-1)) {
 					if (gameObj.mapObj[j-1][i] == 1) {
 						if (Math.floor((Math.random()*10+1) < 5)) {

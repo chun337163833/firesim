@@ -37,7 +37,7 @@ firesim.start = function(){
     director.makeMobileWebAppCapable();
     director.setDisplayFPS(true); // set fps to show in corner
 
-    var gameScene = new lime.Scene().setRenderer(lime.Renderer.CANVAS); // set renderer
+    var gameScene = new lime.Scene().setRenderer(lime.Renderer.DOM); // set renderer
     var landLayer = new lime.Layer().setAnchorPoint(0, 0);
     var controlsLayer = new lime.Layer().setAnchorPoint(0, 0);
 
