@@ -43,12 +43,18 @@ firesim.Land = function(gameObj, playerObj, i, j) {
 	if (gameObj.mapObj[j][i] == 3) {
         this.setFill('images/burnt.png'); // burnt squares
     }
+    
+    if (gameObj.mapObj[j][i] == 4) {
+        this.setFill('images/water.png'); // water squares
+    }
 	
 	goog.events.listen(this,['mousedown','touchstart'],function(e) {
-		e.event.stopPropagation();
-		gameObj.mapObj[j][i] = 2;
-		this.setFill('images/fire.png');
-		this.fireCounter = fireTick;
+		if (gameObj.mapObj[j][i] == 1) {
+            e.event.stopPropagation();
+            gameObj.mapObj[j][i] = 2;
+            this.setFill('images/fire.png');
+            this.fireCounter = fireTick;
+        }
 	});
     
     // schedule + event management
@@ -62,7 +68,7 @@ firesim.Land = function(gameObj, playerObj, i, j) {
 				gameObj.mapObj[j][i] = 3;
 				this.setFill('images/burnt.png');
 			}
-		}
+		} 
 		
         // look at other squares
         if ((this.counter < tickTime/2) && (this.counter > 0)) {

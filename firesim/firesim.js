@@ -44,13 +44,6 @@ firesim.start = function(){
     gameScene.appendChild(landLayer);
     gameScene.appendChild(controlsLayer);
     
-/*    // controls
-    var controlArea = new lime.Sprite().setAnchorPoint(0,0)
-    .setPosition(0, gameObj.height-gameObj.controlsLayer_h)
-    .setSize(gameObj.controlsLayer_w, gameObj.controlsLayer_h)
-    .setFill('#0D0D0D')
-controlsLayer.appendChild(controlArea);*/
-    
     // menu button
     var menuButton = new lime.GlossyButton().setColor('#133242').setText('Menu')
     .setPosition(60, 680)
@@ -79,11 +72,11 @@ goog.events.listen(pauseButton,['mousedown', 'touchstart'], function(e) {
     gameObj.mapObj[10][10] = 2;
 	
 	// add some empty space
-	gameObj.mapObj[10][12] = 0;
-	gameObj.mapObj[11][12] = 0;
-	gameObj.mapObj[11][13] = 0;
-	gameObj.mapObj[12][13] = 0;
-	gameObj.mapObj[12][14] = 0;
+	gameObj.mapObj[10][12] = 4;
+	gameObj.mapObj[11][12] = 4;
+	gameObj.mapObj[11][13] = 4;
+	gameObj.mapObj[12][13] = 4;
+	gameObj.mapObj[12][14] = 4;
     
     // create land elements
     for(var i=0; i<gameObj.num_tiles_x; i++) {
