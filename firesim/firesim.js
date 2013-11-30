@@ -74,7 +74,7 @@ goog.events.listen(pauseButton,['mousedown', 'touchstart'], function(e) {
 	// add some empty space
 	gameObj.mapObj[10][12] = 4;
 	gameObj.mapObj[11][12] = 4;
-	gameObj.mapObj[11][13] = 4;
+	gameObj.mapObj[11][13] = 8;
 	gameObj.mapObj[12][13] = 4;
 	gameObj.mapObj[12][14] = 4;
     

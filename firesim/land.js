@@ -48,6 +48,14 @@ firesim.Land = function(gameObj, playerObj, i, j) {
         this.setFill('images/water.png'); // water squares
     }
 	
+    if (gameObj.mapObj[j][i] == 5) {
+        this.setFill('images/heavy tree.png'); // water squares
+    }
+    
+    if (gameObj.mapObj[j][i] == 8) {
+        this.setFill('images/tree retardant.png'); // water squares
+    }
+    
 	goog.events.listen(this,['mousedown','touchstart'],function(e) {
 		if (gameObj.mapObj[j][i] == 1) {
             e.event.stopPropagation();
